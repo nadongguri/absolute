@@ -4,11 +4,8 @@ node_js:
         - "7.4"
         - "6"
         - "6.1"
-        - "4"
-        - "0.12"
 os:
         - linux
-        - osx
 install:
         - npm install;
           npm install travis-github-lint-status;
