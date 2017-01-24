@@ -1,16 +1,5 @@
 language: node_js
-node_js:
-        - "node"
-        - "7.4"
-        - "6"
-        - "6.1"
-os:
-        - linux
+node_js: 
+  - "node"
 install:
-        - npm install;
-          npm install travis-github-lint-status;
-script:
-        - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_NODE_VERSION" == "node" ]; then
-          ./node_modules/travis-github-lint-status/index.js;
-          fi;
-          npm run coverage;
+  - npm install -g mocha
