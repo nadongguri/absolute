@@ -3,3 +3,8 @@ node_js:
   - "node"
 install:
   - npm install -g mocha
+  - npm install;
+    npm install travis-github-lint-status;
+script:
+  - ./node_modules/travis-github-lint-status/index.js;
+    npm run coverage;
