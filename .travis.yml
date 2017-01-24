@@ -3,8 +3,8 @@ node_js:
   - "node"
 install:
   - npm install -g mocha
-  - npm install;
-    npm install travis-github-lint-status;
+  - npm install travis-github-lint-status;
+  - npm install --save-dev eslint-config-airbnb eslint@^3.0.2 eslint-plugin-jsx-a11y@^2.2.0 eslint-plugin-import@^6.9.0 eslint-plugin-react
 script:
   - ./node_modules/travis-github-lint-status/index.js;
     npm run coverage;
