@@ -8,4 +8,4 @@ install:
 script:
   - cp travis_lint.js ./node_modules/travis-github-lint-status/index.js     
   - ./node_modules/travis-github-lint-status/index.js
-  - npm run coverage
+    npm run coverage
