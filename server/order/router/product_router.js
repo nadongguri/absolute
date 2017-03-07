@@ -7,15 +7,21 @@ const productController = require('../controller/product_controller');
 
 const router = express.Router();
 
-router.post('/add', (req, res) => {
-  productController.addProduct(JSON.stringify(req.body));
-  res.send('OK');
+router.post('/', (request, response) => {
+  if (request.body.name && request.body.amount) {
+    productController.addProduct(JSON.parse(JSON.stringify(request.body)))
+      .then((product) => {
+        response.send(product);
+      });
+  } else {
+    response.sendStatus(400);
+  }
 });
 
-router.post('/list', (req, res) => {
+router.get('/', (request, response) => {
   productController.getProductList()
     .then((productList) => {
-      res.send(productList);
+      response.send(productList);
     });
 });
 
