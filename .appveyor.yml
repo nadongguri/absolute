@@ -1,8 +1,15 @@
+# version format
+version: 1.0.{build}
+
 build: off
 
 branches:
   only:
     - master
+
+platform:
+  - x86
+  - x64
 
 test_script:
   - ./absolute lint
