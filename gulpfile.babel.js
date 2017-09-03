@@ -60,7 +60,15 @@ gulp.task('build_server', () => {
 });
 
 gulp.task('lint', (finish) => {
-  runSequence('lint_server', 'lint_router', finish);
+  runSequence('lint_server', 'lint_router', 'lint_client', finish);
+});
+
+gulp.task('lint_client', (finish) => {
+  return gulp.src([
+    './client/**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('lint_server', (finish) => {
